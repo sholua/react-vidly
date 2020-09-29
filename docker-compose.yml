@@ -1,0 +1,23 @@
+version: '3'
+services: 
+  client:
+    build: ./client
+  api: 
+    build: ./server
+    env_file: .env
+    environment:
+      - MONGO_USERNAME=$MONGO_USERNAME
+      - MONGO_PASSWORD=$MONGO_PASSWORD
+      - MONGO_HOSTNAME=mongo
+      - MONGO_PORT=$MONGO_PORT
+      - MONGO_DB=$MONGO_DB 
+    command: ./wait-for.sh mongo:27017 -- /app/node_modules/.bin/nodemon app.js
+  mongo:
+    image: mongo
+    volumes:  
+      - ./dbdata:/data/db 
+  nginx:
+    restart: always
+    build: ./nginx
+    ports:
+      - '80:80'
