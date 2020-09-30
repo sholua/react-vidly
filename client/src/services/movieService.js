@@ -1,7 +1,8 @@
 import { func } from "prop-types";
 import http from "./httpService";
+import { apiUrl } from "../config.json";
 
-const apiEndpoint = "http://localhost:3000/api/movies";
+const apiEndpoint = apiUrl + "/movies";
 
 export function getMovies() {
   return http.get(apiEndpoint);
