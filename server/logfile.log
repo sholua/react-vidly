@@ -32,3 +32,5 @@
 {"level":"info","message":"Connected to mongodb://mongo/vidly...","timestamp":"2020-09-30T07:54:36.389Z"}
 {"level":"info","message":"Listening on port 5000...","timestamp":"2020-09-30T07:57:36.626Z"}
 {"level":"info","message":"Connected to mongodb://mongo/vidly...","timestamp":"2020-09-30T07:57:36.660Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2020-09-30T08:30:41.289Z"}
+{"level":"info","message":"Connected to mongodb://mongo/vidly...","timestamp":"2020-09-30T08:30:41.326Z"}
