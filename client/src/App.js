@@ -27,7 +27,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <ToastContainer />
-        <NavBar />
+        <NavBar user={this.state.user} />
         <main className="container">
           <Switch>
             <Route path="/register" component={RegisterForm} />
