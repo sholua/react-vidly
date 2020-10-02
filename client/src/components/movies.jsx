@@ -104,6 +104,7 @@ class Movies extends Component {
       searchQuery,
       sortColumn,
     } = this.state;
+    const { user } = this.props;
 
     const { totalCount, data: movies } = this.getPagedData();
     if (totalCount === 0) return <p>There are no movies in the database.</p>;
@@ -119,13 +120,15 @@ class Movies extends Component {
         </div>
         <div className="col">
           <p>Showing {totalCount} movies in the database.</p>
-          <Link
-            to="/movies/new"
-            className="btn btn-primary"
-            style={{ margin: 20 }}
-          >
-            Add new
-          </Link>
+          {user && (
+            <Link
+              to="/movies/new"
+              className="btn btn-primary"
+              style={{ margin: 20 }}
+            >
+              Add new
+            </Link>
+          )}
           <SearchBox value={searchQuery} onChange={this.handleSearch} />
           <MoviesTable
             movies={movies}
